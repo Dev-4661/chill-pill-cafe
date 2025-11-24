@@ -1,5 +1,5 @@
 /**
- * Chill Pill Café - Main JavaScript
+ * RootStatix Cuisine - Main JavaScript
  * Interactive elements, form validation, and UI enhancements
  */
 
@@ -326,7 +326,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // ========================================
     
     console.log(
-        '%cChill Pill Café',
+        '%cRootStatix Cuisine',
         'font-size: 24px; font-weight: bold; color: #2c5f2d;'
     );
     console.log(

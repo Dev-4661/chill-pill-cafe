@@ -1,5 +1,5 @@
 """
-Chill Pill Café - Flask Application
+RootStatix Cuisine - Flask Application
 A modern, elegant restaurant website with multi-page functionality
 """
 
