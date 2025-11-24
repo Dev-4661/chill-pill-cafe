@@ -241,14 +241,14 @@ def contact():
     contact_info = {
         'address': 'Bandra West, Mumbai, Maharashtra, India',
         'phone': '+91 98765 43210',
-        'email': 'info@chillpillcafe.com',
+        'email': 'connect@rootstatix.com',
         'hours': {
             'weekdays': '11:00 AM - 11:00 PM',
             'weekends': '10:00 AM - 12:00 AM'
         },
         'social': {
-            'instagram': 'https://instagram.com/chillpillcafe',
-            'facebook': 'https://facebook.com/chillpillcafe',
+            'instagram': 'https://www.instagram.com/rootstatix/',
+            'facebook': 'https://www.facebook.com/people/RootStatix/61560068339584/',
             'twitter': 'https://twitter.com/chillpillcafe'
         }
     }
