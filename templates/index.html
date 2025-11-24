@@ -1,0 +1,220 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Chill Pill Café | Bandra West, Mumbai{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-overlay"></div>
+    <img src="{{ url_for('static', filename='images/hero_ambience.jpg') }}" alt="Chill Pill Café Ambience" class="hero-image">
+    <div class="hero-content">
+        <h1 class="hero-title">Welcome to Chill Pill Café</h1>
+        <p class="hero-subtitle">Where culinary artistry meets tranquil ambience in the heart of Mumbai</p>
+        <div class="hero-buttons">
+            <a href="{{ url_for('menu') }}" class="btn btn-primary">Explore Menu</a>
+            <a href="{{ url_for('reservation') }}" class="btn btn-secondary">Book a Table</a>
+            <a href="{{ url_for('contact') }}" class="btn btn-outline">Contact Us</a>
+        </div>
+    </div>
+    <div class="hero-scroll">
+        <i class="fas fa-chevron-down"></i>
+    </div>
+</section>
+
+<!-- Introduction Section -->
+<section class="intro-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">Welcome</span>
+            <h2 class="section-title">A Culinary Journey in Mumbai</h2>
+            <p class="section-description">
+                Nestled in the vibrant Bandra West, Chill Pill Café is more than just a restaurant—it's an experience. 
+                We blend authentic flavors from around the world with the warmth of Indian hospitality, creating 
+                unforgettable moments for every guest.
+            </p>
+        </div>
+        
+        <div class="intro-features">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-utensils"></i>
+                </div>
+                <h3>Exquisite Cuisine</h3>
+                <p>Masterfully crafted dishes from Indian, Italian, and Continental culinary traditions</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <h3>Fresh Ingredients</h3>
+                <p>Sourced daily from local markets and premium suppliers for authentic flavors</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-couch"></i>
+                </div>
+                <h3>Elegant Ambience</h3>
+                <p>Thoughtfully designed spaces that offer comfort, style, and tranquility</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-award"></i>
+                </div>
+                <h3>Award Winning</h3>
+                <p>Recognized for excellence in service, taste, and customer satisfaction</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Signature Dishes Section -->
+<section class="signature-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">Chef's Specials</span>
+            <h2 class="section-title">Signature Dishes</h2>
+            <p class="section-description">
+                Discover our most beloved creations, each dish a testament to our commitment to culinary excellence
+            </p>
+        </div>
+        
+        <div class="dishes-grid">
+            <div class="dish-card">
+                <div class="dish-image">
+                    <img src="{{ url_for('static', filename='images/butter_chicken.jpg') }}" alt="Butter Chicken">
+                    <div class="dish-badge">Chef's Special</div>
+                </div>
+                <div class="dish-content">
+                    <h3>Butter Chicken</h3>
+                    <p>Tender chicken simmered in a rich, creamy tomato gravy with aromatic spices. 
+                       A timeless Indian classic perfected by our master chefs.</p>
+                    <div class="dish-footer">
+                        <span class="dish-price">₹620</span>
+                        <a href="{{ url_for('menu') }}" class="dish-link">View Menu <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="dish-card">
+                <div class="dish-image">
+                    <img src="{{ url_for('static', filename='images/truffle_pasta.jpg') }}" alt="Truffle Pasta">
+                    <div class="dish-badge">Chef's Special</div>
+                </div>
+                <div class="dish-content">
+                    <h3>Truffle Pasta</h3>
+                    <p>Handmade pasta tossed in luxurious truffle oil, finished with aged parmesan. 
+                       An Italian masterpiece that delights every palate.</p>
+                    <div class="dish-footer">
+                        <span class="dish-price">₹680</span>
+                        <a href="{{ url_for('menu') }}" class="dish-link">View Menu <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="dish-card">
+                <div class="dish-image">
+                    <img src="{{ url_for('static', filename='images/seabass.jpg') }}" alt="Grilled Sea Bass">
+                    <div class="dish-badge">Chef's Special</div>
+                </div>
+                <div class="dish-content">
+                    <h3>Grilled Sea Bass</h3>
+                    <p>Fresh sea bass perfectly grilled with lemon butter, served with seasonal vegetables. 
+                       A light yet flavorful Continental delight.</p>
+                    <div class="dish-footer">
+                        <span class="dish-price">₹880</span>
+                        <a href="{{ url_for('menu') }}" class="dish-link">View Menu <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="dish-card">
+                <div class="dish-image">
+                    <img src="{{ url_for('static', filename='images/cheesecake.jpg') }}" alt="Cheesecake">
+                    <div class="dish-badge">Chef's Special</div>
+                </div>
+                <div class="dish-content">
+                    <h3>Cheesecake</h3>
+                    <p>Classic New York style cheesecake with a perfect graham cracker crust and creamy filling. 
+                       Topped with fresh strawberries and a delicate glaze.</p>
+                    <div class="dish-footer">
+                        <span class="dish-price">₹340</span>
+                        <a href="{{ url_for('menu') }}" class="dish-link">View Menu <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="cta-section">
+    <div class="cta-overlay"></div>
+    <div class="container">
+        <div class="cta-content">
+            <h2>Experience Dining Redefined</h2>
+            <p>Reserve your table today and discover why Chill Pill Café is Mumbai's premier dining destination</p>
+            <a href="{{ url_for('reservation') }}" class="btn btn-primary btn-large">Book Your Table Now</a>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">Testimonials</span>
+            <h2 class="section-title">What Our Guests Say</h2>
+        </div>
+        
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">"An absolutely wonderful dining experience! The ambience is serene, the food is exceptional, and the service is impeccable. The Butter Chicken is the best I've ever had!"</p>
+                <div class="testimonial-author">
+                    <strong>Priya Sharma</strong>
+                    <span>Mumbai</span>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">"Chill Pill Café has become my go-to place for special occasions. The truffle pasta is divine, and the staff makes you feel like family. Highly recommended!"</p>
+                <div class="testimonial-author">
+                    <strong>Arjun Mehta</strong>
+                    <span>Bandra Resident</span>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">"A hidden gem in Bandra! The fusion of flavors is incredible. The Cheesecake is a must-try. Perfect spot for both casual meals and celebrations."</p>
+                <div class="testimonial-author">
+                    <strong>Sarah D'Souza</strong>
+                    <span>Food Blogger</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

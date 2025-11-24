@@ -1,0 +1,201 @@
+{% extends "base.html" %}
+
+{% block title %}Menu - Chill Pill Café | Explore Our Culinary Delights{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header">
+    <div class="page-header-overlay"></div>
+    <img src="{{ url_for('static', filename='images/menu_header.jpg') }}" alt="Chill Pill Café Menu">
+    <div class="page-header-content">
+        <h1>Our Menu</h1>
+        <p>A curated selection of culinary masterpieces</p>
+    </div>
+</section>
+
+<!-- Menu Introduction -->
+<section class="menu-intro">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">Culinary Excellence</span>
+            <h2 class="section-title">Discover Our Signature Flavors</h2>
+            <p class="section-description">
+                Each dish on our menu is thoughtfully crafted using the finest ingredients and traditional techniques, 
+                ensuring an authentic and memorable dining experience
+            </p>
+        </div>
+        
+        <div class="dietary-legend">
+            <h3>Dietary Information</h3>
+            <div class="legend-items">
+                <span class="legend-item"><i class="fas fa-leaf dietary-veg"></i> Vegetarian</span>
+                <span class="legend-item"><i class="fas fa-seedling dietary-vegan"></i> Vegan</span>
+                <span class="legend-item"><i class="fas fa-pepper-hot dietary-spicy"></i> Spicy</span>
+                <span class="legend-item"><i class="fas fa-wheat dietary-gluten"></i> Gluten-Free Available</span>
+                <span class="legend-item"><i class="fas fa-star dietary-special"></i> Chef's Special</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Starters Section -->
+<section class="menu-category">
+    <div class="container">
+        <div class="category-header">
+            <h2><i class="fas fa-utensils"></i> Starters</h2>
+            <p>Begin your culinary journey with these exquisite appetizers</p>
+        </div>
+        
+        <div class="menu-items">
+            {% for dish in menu.starters %}
+            <div class="menu-item">
+                <div class="menu-item-image">
+                    <img src="{{ url_for('static', filename='images/' + dish.image) }}" alt="{{ dish.name }}">
+                    {% if dish.special %}
+                    <span class="special-badge">Chef's Special</span>
+                    {% endif %}
+                </div>
+                <div class="menu-item-content">
+                    <div class="menu-item-header">
+                        <h3>{{ dish.name }}</h3>
+                        <span class="menu-item-price">{{ dish.price }}</span>
+                    </div>
+                    <p class="menu-item-description">{{ dish.description }}</p>
+                    <div class="menu-item-dietary">
+                        {% if 'veg' in dish.dietary %}
+                        <i class="fas fa-leaf dietary-veg" title="Vegetarian"></i>
+                        {% endif %}
+                        {% if 'vegan' in dish.dietary %}
+                        <i class="fas fa-seedling dietary-vegan" title="Vegan"></i>
+                        {% endif %}
+                        {% if 'spicy' in dish.dietary %}
+                        <i class="fas fa-pepper-hot dietary-spicy" title="Spicy"></i>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Main Course Section -->
+<section class="menu-category alt-bg">
+    <div class="container">
+        <div class="category-header">
+            <h2><i class="fas fa-drumstick-bite"></i> Main Course</h2>
+            <p>Our signature dishes that define culinary excellence</p>
+        </div>
+        
+        <div class="menu-items">
+            {% for dish in menu.mains %}
+            <div class="menu-item">
+                <div class="menu-item-image">
+                    <img src="{{ url_for('static', filename='images/' + dish.image) }}" alt="{{ dish.name }}">
+                    {% if dish.special %}
+                    <span class="special-badge">Chef's Special</span>
+                    {% endif %}
+                </div>
+                <div class="menu-item-content">
+                    <div class="menu-item-header">
+                        <h3>{{ dish.name }}</h3>
+                        <span class="menu-item-price">{{ dish.price }}</span>
+                    </div>
+                    <p class="menu-item-description">{{ dish.description }}</p>
+                    <div class="menu-item-dietary">
+                        {% if 'veg' in dish.dietary %}
+                        <i class="fas fa-leaf dietary-veg" title="Vegetarian"></i>
+                        {% endif %}
+                        {% if 'vegan' in dish.dietary %}
+                        <i class="fas fa-seedling dietary-vegan" title="Vegan"></i>
+                        {% endif %}
+                        {% if 'spicy' in dish.dietary %}
+                        <i class="fas fa-pepper-hot dietary-spicy" title="Spicy"></i>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Desserts Section -->
+<section class="menu-category">
+    <div class="container">
+        <div class="category-header">
+            <h2><i class="fas fa-ice-cream"></i> Desserts</h2>
+            <p>Sweet endings to create lasting memories</p>
+        </div>
+        
+        <div class="menu-items">
+            {% for dish in menu.desserts %}
+            <div class="menu-item">
+                <div class="menu-item-image">
+                    <img src="{{ url_for('static', filename='images/' + dish.image) }}" alt="{{ dish.name }}">
+                    {% if dish.special %}
+                    <span class="special-badge">Chef's Special</span>
+                    {% endif %}
+                </div>
+                <div class="menu-item-content">
+                    <div class="menu-item-header">
+                        <h3>{{ dish.name }}</h3>
+                        <span class="menu-item-price">{{ dish.price }}</span>
+                    </div>
+                    <p class="menu-item-description">{{ dish.description }}</p>
+                    <div class="menu-item-dietary">
+                        {% if 'veg' in dish.dietary %}
+                        <i class="fas fa-leaf dietary-veg" title="Vegetarian"></i>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Beverages Section -->
+<section class="menu-category alt-bg">
+    <div class="container">
+        <div class="category-header">
+            <h2><i class="fas fa-mug-hot"></i> Beverages</h2>
+            <p>Refreshing drinks to complement your meal</p>
+        </div>
+        
+        <div class="menu-items">
+            {% for dish in menu.beverages %}
+            <div class="menu-item">
+                <div class="menu-item-image">
+                    <img src="{{ url_for('static', filename='images/' + dish.image) }}" alt="{{ dish.name }}">
+                </div>
+                <div class="menu-item-content">
+                    <div class="menu-item-header">
+                        <h3>{{ dish.name }}</h3>
+                        <span class="menu-item-price">{{ dish.price }}</span>
+                    </div>
+                    <p class="menu-item-description">{{ dish.description }}</p>
+                    <div class="menu-item-dietary">
+                        {% if 'veg' in dish.dietary %}
+                        <i class="fas fa-leaf dietary-veg" title="Vegetarian"></i>
+                        {% endif %}
+                        {% if 'vegan' in dish.dietary %}
+                        <i class="fas fa-seedling dietary-vegan" title="Vegan"></i>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Menu CTA -->
+<section class="menu-cta">
+    <div class="container">
+        <h2>Ready to Taste These Delights?</h2>
+        <p>Reserve your table and experience culinary excellence</p>
+        <a href="{{ url_for('reservation') }}" class="btn btn-primary btn-large">Book a Table</a>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,275 @@
+{% extends "base.html" %}
+
+{% block title %}About Us - Chill Pill Café | Our Story{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header">
+    <div class="page-header-overlay"></div>
+    <img src="{{ url_for('static', filename='images/about_header.jpg') }}" alt="About Chill Pill Café">
+    <div class="page-header-content">
+        <h1>About Us</h1>
+        <p>Discover the story behind Mumbai's favorite dining destination</p>
+    </div>
+</section>
+
+<!-- Story Section -->
+<section class="story-section">
+    <div class="container">
+        <div class="story-content">
+            <div class="story-text">
+                <span class="section-label">Our Journey</span>
+                <h2>The Story of Chill Pill Café</h2>
+                <p>
+                    Born from a passion for exceptional food and warm hospitality, Chill Pill Café opened its doors 
+                    in 2018 in the vibrant heart of Bandra West, Mumbai. What began as a dream to create a sanctuary 
+                    where food lovers could escape the chaos of city life has blossomed into one of Mumbai's most 
+                    beloved dining destinations.
+                </p>
+                <p>
+                    Our founders, Chef Vikram Malhotra and hospitality expert Meera Kapoor, envisioned a space that 
+                    would celebrate the diversity of global cuisines while honoring the rich culinary traditions of 
+                    India. With over 30 years of combined experience in the culinary world, they crafted a menu that 
+                    tells a story of passion, precision, and creativity.
+                </p>
+                <p>
+                    The name "Chill Pill" embodies our philosophy—dining should be a therapeutic experience, a moment 
+                    to pause, savor, and reconnect. Every dish, every detail, and every interaction is designed to 
+                    provide that perfect dose of relaxation and indulgence.
+                </p>
+            </div>
+            <div class="story-image">
+                <img src="{{ url_for('static', filename='images/founders.jpg') }}" alt="Founders of Chill Pill Café">
+                <div class="story-image-caption">
+                    <p>Chef Vikram Malhotra & Meera Kapoor</p>
+                    <span>Founders, Chill Pill Café</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Mission & Vision -->
+<section class="mission-section">
+    <div class="container">
+        <div class="mission-grid">
+            <div class="mission-card">
+                <div class="mission-icon">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <h3>Our Mission</h3>
+                <p>
+                    To deliver an unparalleled dining experience that nourishes both body and soul. We are committed 
+                    to serving dishes crafted with the finest ingredients, prepared with love, and presented with artistry. 
+                    Our mission extends beyond the plate—we strive to create lasting memories and foster a community of 
+                    food enthusiasts who appreciate quality, authenticity, and innovation.
+                </p>
+            </div>
+            
+            <div class="mission-card">
+                <div class="mission-icon">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <h3>Our Vision</h3>
+                <p>
+                    To be recognized as Mumbai's premier destination for multi-cuisine excellence, where tradition meets 
+                    innovation. We envision expanding our presence while maintaining the intimate, personalized service 
+                    that defines us. Our goal is to set new standards in hospitality, sustainability, and culinary 
+                    creativity, inspiring both our guests and the broader culinary community.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Values Section -->
+<section class="values-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">What We Stand For</span>
+            <h2 class="section-title">Our Core Values</h2>
+        </div>
+        
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h3>Exceptional Service</h3>
+                <p>
+                    Every guest is treated like family. Our team is trained to anticipate needs, provide personalized 
+                    recommendations, and ensure every visit exceeds expectations. From the moment you step in to the 
+                    final goodbye, we're dedicated to making you feel special.
+                </p>
+            </div>
+            
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Hygiene Excellence</h3>
+                <p>
+                    We maintain the highest standards of cleanliness and food safety. Our kitchen follows strict 
+                    hygiene protocols, undergoes regular inspections, and uses state-of-the-art equipment to ensure 
+                    every dish is prepared in a pristine environment.
+                </p>
+            </div>
+            
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h3>Authenticity</h3>
+                <p>
+                    We honor traditional recipes while embracing creative innovation. Each dish is researched, tested, 
+                    and perfected to deliver authentic flavors. Whether it's a classic Indian curry or Italian pasta, 
+                    we stay true to culinary heritage.
+                </p>
+            </div>
+            
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-seedling"></i>
+                </div>
+                <h3>Quality Ingredients</h3>
+                <p>
+                    We source ingredients from trusted suppliers and local farms, prioritizing organic and sustainable 
+                    options. Fresh vegetables, premium meats, artisanal cheeses, and hand-selected spices—every component 
+                    meets our exacting standards.
+                </p>
+            </div>
+            
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h3>Innovation</h3>
+                <p>
+                    While respecting tradition, we're not afraid to experiment. Our seasonal menus feature creative 
+                    fusion dishes that surprise and delight. We constantly evolve, introducing new flavors while 
+                    keeping our signature dishes that guests love.
+                </p>
+            </div>
+            
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>Community</h3>
+                <p>
+                    We're proud to be part of the Bandra community. We support local businesses, participate in 
+                    community events, and give back through charitable initiatives. Our café is a gathering place 
+                    where friendships are forged and celebrations happen.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Unique Section -->
+<section class="unique-section">
+    <div class="container">
+        <div class="unique-content">
+            <div class="unique-image">
+                <img src="{{ url_for('static', filename='images/interior_elegant.jpg') }}" alt="Elegant Interior">
+            </div>
+            <div class="unique-text">
+                <span class="section-label">What Makes Us Special</span>
+                <h2>Why Chill Pill Café is Unique</h2>
+                
+                <div class="unique-feature">
+                    <i class="fas fa-palette"></i>
+                    <div>
+                        <h4>Thoughtful Design</h4>
+                        <p>Every element of our space—from lighting to furniture—is curated to create a calming, 
+                           sophisticated atmosphere. Our interior reflects Mumbai's cosmopolitan spirit while offering 
+                           a peaceful retreat.</p>
+                    </div>
+                </div>
+                
+                <div class="unique-feature">
+                    <i class="fas fa-globe-asia"></i>
+                    <div>
+                        <h4>Mumbai Cultural Influence</h4>
+                        <p>Being in the heart of Bandra, we draw inspiration from Mumbai's vibrant food culture. 
+                           Our menu celebrates local flavors while incorporating global influences, creating a unique 
+                           culinary identity.</p>
+                    </div>
+                </div>
+                
+                <div class="unique-feature">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <div>
+                        <h4>Personal Touch</h4>
+                        <p>Unlike chain restaurants, we know our regulars by name, remember preferences, and celebrate 
+                           milestones with our guests. This personal connection is at the heart of everything we do.</p>
+                    </div>
+                </div>
+                
+                <div class="unique-feature">
+                    <i class="fas fa-cocktail"></i>
+                    <div>
+                        <h4>Signature Creations</h4>
+                        <p>Our menu features exclusive dishes you won't find anywhere else—like our famous 
+                           Cheesecake and Mumbai Masala Chai—crafted by our award-winning culinary team.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Team Section -->
+<section class="team-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">Meet the Team</span>
+            <h2 class="section-title">The Passionate People Behind Your Experience</h2>
+        </div>
+        
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="team-photo">
+                    <img src="{{ url_for('static', filename='images/chef_vikram.jpg') }}" alt="Divyesh Boddu">
+                </div>
+                <h3>Divyesh Boddu</h3>
+                <p class="team-role">Co-Founder & Executive Chef</p>
+                <p class="team-bio">With 20 years in prestigious kitchens across India and Europe, Divyesh brings 
+                   world-class expertise and a passion for innovation to every dish.</p>
+            </div>
+            
+            <div class="team-member">
+                <div class="team-photo">
+                    <img src="{{ url_for('static', filename='images/meera_kapoor.jpg') }}" alt="Vivek Gupta">
+                </div>
+                <h3>Vivek Gupta</h3>
+                <p class="team-role">Co-Founder & Hospitality Director</p>
+                <p class="team-bio">A hospitality veteran with a keen eye for detail, Vivek ensures every guest 
+                   experiences warmth, comfort, and impeccable service.</p>
+            </div>
+            
+            <div class="team-member">
+                <div class="team-photo">
+                    <img src="{{ url_for('static', filename='images/pastry_chef.jpg') }}" alt="Pastry Chef">
+                </div>
+                <h3>Chef Anjali Desai</h3>
+                <p class="team-role">Head Pastry Chef</p>
+                <p class="team-bio">Trained in French patisserie, Chef Anjali creates stunning desserts that are 
+                   as beautiful as they are delicious.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="about-cta">
+    <div class="container">
+        <h2>Ready to Experience the Chill Pill Difference?</h2>
+        <p>Join us for an unforgettable dining experience</p>
+        <div class="cta-buttons">
+            <a href="{{ url_for('menu') }}" class="btn btn-primary">Explore Our Menu</a>
+            <a href="{{ url_for('reservation') }}" class="btn btn-secondary">Reserve Your Table</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

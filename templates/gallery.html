@@ -1,0 +1,162 @@
+{% extends "base.html" %}
+
+{% block title %}Gallery - Chill Pill Café | Ambience & Food Photos{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header">
+    <div class="page-header-overlay"></div>
+    <img src="{{ url_for('static', filename='images/gallery_header.jpg') }}" alt="Gallery">
+    <div class="page-header-content">
+        <h1>Gallery</h1>
+        <p>A visual journey through our culinary artistry and elegant spaces</p>
+    </div>
+</section>
+
+<!-- Gallery Introduction -->
+<section class="gallery-intro">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">Visual Experience</span>
+            <h2 class="section-title">Discover Chill Pill Café</h2>
+            <p class="section-description">
+                Immerse yourself in the ambience, artistry, and attention to detail that define our dining experience
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery Filter -->
+<section class="gallery-section">
+    <div class="container">
+        <div class="gallery-filter">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="ambience">Ambience</button>
+            <button class="filter-btn" data-filter="food">Food</button>
+            <button class="filter-btn" data-filter="interior">Interior</button>
+            <button class="filter-btn" data-filter="events">Events</button>
+        </div>
+        
+        <div class="gallery-grid">
+            {% for image in images %}
+            <div class="gallery-item" data-category="{{ image.category }}">
+                <img src="{{ url_for('static', filename='images/' + image.src) }}" alt="{{ image.alt }}">
+                <div class="gallery-overlay">
+                    <h3>{{ image.alt }}</h3>
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Instagram Section -->
+<section class="instagram-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">Follow Us</span>
+            <h2 class="section-title">@ChillPillCafe on Instagram</h2>
+            <p class="section-description">
+                Stay updated with our latest creations, events, and behind-the-scenes moments
+            </p>
+        </div>
+        
+        <div class="instagram-feed">
+            <div class="instagram-post">
+                <img src="{{ url_for('static', filename='images/insta_1.jpg') }}" alt="Instagram Post">
+                <div class="instagram-overlay">
+                    <i class="fab fa-instagram"></i>
+                </div>
+            </div>
+            
+            <div class="instagram-post">
+                <img src="{{ url_for('static', filename='images/insta_2.jpg') }}" alt="Instagram Post">
+                <div class="instagram-overlay">
+                    <i class="fab fa-instagram"></i>
+                </div>
+            </div>
+            
+            <div class="instagram-post">
+                <img src="{{ url_for('static', filename='images/insta_3.jpg') }}" alt="Instagram Post">
+                <div class="instagram-overlay">
+                    <i class="fab fa-instagram"></i>
+                </div>
+            </div>
+            
+            <div class="instagram-post">
+                <img src="{{ url_for('static', filename='images/insta_4.jpg') }}" alt="Instagram Post">
+                <div class="instagram-overlay">
+                    <i class="fab fa-instagram"></i>
+                </div>
+            </div>
+            
+            <div class="instagram-post">
+                <img src="{{ url_for('static', filename='images/insta_5.jpg') }}" alt="Instagram Post">
+                <div class="instagram-overlay">
+                    <i class="fab fa-instagram"></i>
+                </div>
+            </div>
+            
+            <div class="instagram-post">
+                <img src="{{ url_for('static', filename='images/insta_6.jpg') }}" alt="Instagram Post">
+                <div class="instagram-overlay">
+                    <i class="fab fa-instagram"></i>
+                </div>
+            </div>
+        </div>
+        
+        <div class="instagram-cta">
+            <a href="https://instagram.com/chillpillcafe" target="_blank" class="btn btn-primary">
+                <i class="fab fa-instagram"></i> Follow Us on Instagram
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Visit CTA -->
+<section class="gallery-cta">
+    <div class="container">
+        <h2>Experience It Yourself</h2>
+        <p>Pictures don't do justice. Visit us to experience the magic in person</p>
+        <a href="{{ url_for('reservation') }}" class="btn btn-primary btn-large">Reserve Your Table</a>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// Gallery filter functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            // Remove active class from all buttons
+            filterBtns.forEach(b => b.classList.remove('active'));
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            const filter = this.getAttribute('data-filter');
+            
+            galleryItems.forEach(item => {
+                if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                    item.style.display = 'block';
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'scale(1)';
+                    }, 10);
+                } else {
+                    item.style.opacity = '0';
+                    item.style.transform = 'scale(0.8)';
+                    setTimeout(() => {
+                        item.style.display = 'none';
+                    }, 300);
+                }
+            });
+        });
+    });
+});
+</script>
+{% endblock %}

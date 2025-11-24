@@ -1,0 +1,182 @@
+{% extends "base.html" %}
+
+{% block title %}Reserve Table - Chill Pill Café | Book Your Experience{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header">
+    <div class="page-header-overlay"></div>
+    <img src="{{ url_for('static', filename='images/reservation_header.jpg') }}" alt="Reserve Your Table">
+    <div class="page-header-content">
+        <h1>Reserve Your Table</h1>
+        <p>Secure your spot for an unforgettable dining experience</p>
+    </div>
+</section>
+
+<!-- Reservation Form Section -->
+<section class="reservation-section">
+    <div class="container">
+        <div class="reservation-wrapper">
+            <div class="reservation-info">
+                <h2>Book Your Table at Chill Pill Café</h2>
+                <p class="reservation-intro">
+                    Experience the perfect blend of exquisite cuisine and elegant ambience. Reserve your table today 
+                    and let us make your dining experience truly memorable.
+                </p>
+                
+                <div class="reservation-features">
+                    <div class="res-feature">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Quick Confirmation</h4>
+                            <p>Instant booking confirmation via email</p>
+                        </div>
+                    </div>
+                    
+                    <div class="res-feature">
+                        <i class="fas fa-calendar-check"></i>
+                        <div>
+                            <h4>Flexible Timing</h4>
+                            <p>Choose your preferred date and time</p>
+                        </div>
+                    </div>
+                    
+                    <div class="res-feature">
+                        <i class="fas fa-users"></i>
+                        <div>
+                            <h4>Group Bookings</h4>
+                            <p>Perfect for celebrations and gatherings</p>
+                        </div>
+                    </div>
+                    
+                    <div class="res-feature">
+                        <i class="fas fa-concierge-bell"></i>
+                        <div>
+                            <h4>Special Requests</h4>
+                            <p>We accommodate dietary needs and preferences</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reservation-contact">
+                    <h3>Need Assistance?</h3>
+                    <p><i class="fas fa-phone"></i> Call us: <a href="tel:+919876543210">+91 98765 43210</a></p>
+                    <p><i class="fas fa-envelope"></i> Email: <a href="mailto:reservations@chillpillcafe.com">reservations@chillpillcafe.com</a></p>
+                </div>
+            </div>
+            
+            <div class="reservation-form-container">
+                <form action="{{ url_for('reservation') }}" method="POST" class="reservation-form" id="reservationForm">
+                    <h3>Reservation Details</h3>
+                    
+                    <div class="form-group">
+                        <label for="name"><i class="fas fa-user"></i> Full Name *</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email"><i class="fas fa-envelope"></i> Email Address *</label>
+                        <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone"><i class="fas fa-phone"></i> Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="date"><i class="fas fa-calendar"></i> Date *</label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="time"><i class="fas fa-clock"></i> Time *</label>
+                            <input type="time" id="time" name="time" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="guests"><i class="fas fa-users"></i> Number of Guests *</label>
+                        <select id="guests" name="guests" required>
+                            <option value="">Select number of guests</option>
+                            <option value="1">1 Guest</option>
+                            <option value="2">2 Guests</option>
+                            <option value="3">3 Guests</option>
+                            <option value="4">4 Guests</option>
+                            <option value="5">5 Guests</option>
+                            <option value="6">6 Guests</option>
+                            <option value="7">7 Guests</option>
+                            <option value="8">8 Guests</option>
+                            <option value="9+">9+ Guests (We'll contact you)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="special_requests"><i class="fas fa-comment-alt"></i> Special Requests (Optional)</label>
+                        <textarea id="special_requests" name="special_requests" rows="4" 
+                                  placeholder="Dietary restrictions, celebration details, seating preferences, etc."></textarea>
+                    </div>
+                    
+                    <div class="form-notice">
+                        <i class="fas fa-info-circle"></i>
+                        <p>All reservations are subject to availability. We'll confirm your booking via email within 30 minutes.</p>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i class="fas fa-check"></i> Confirm Reservation
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Reservation Guidelines -->
+<section class="reservation-guidelines">
+    <div class="container">
+        <h2>Reservation Guidelines</h2>
+        <div class="guidelines-grid">
+            <div class="guideline-card">
+                <i class="fas fa-info-circle"></i>
+                <h4>Cancellation Policy</h4>
+                <p>Please inform us at least 2 hours in advance if you need to cancel or modify your reservation.</p>
+            </div>
+            
+            <div class="guideline-card">
+                <i class="fas fa-clock"></i>
+                <h4>Arrival Time</h4>
+                <p>We hold your table for 15 minutes past your reservation time. Please call if you're running late.</p>
+            </div>
+            
+            <div class="guideline-card">
+                <i class="fas fa-users-cog"></i>
+                <h4>Large Groups</h4>
+                <p>For parties of 10 or more, please contact us directly to arrange a customized dining experience.</p>
+            </div>
+            
+            <div class="guideline-card">
+                <i class="fas fa-birthday-cake"></i>
+                <h4>Special Occasions</h4>
+                <p>Celebrating something special? Let us know and we'll help make it memorable with complimentary touches.</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// Set minimum date to today
+document.addEventListener('DOMContentLoaded', function() {
+    const dateInput = document.getElementById('date');
+    const today = new Date().toISOString().split('T')[0];
+    dateInput.setAttribute('min', today);
+    
+    // Set default time range (11 AM to 11 PM)
+    const timeInput = document.getElementById('time');
+    timeInput.setAttribute('min', '11:00');
+    timeInput.setAttribute('max', '23:00');
+});
+</script>
+{% endblock %}

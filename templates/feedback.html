@@ -1,0 +1,299 @@
+{% extends "base.html" %}
+
+{% block title %}Feedback - Chill Pill Café | We Value Your Opinion{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header">
+    <div class="page-header-overlay"></div>
+    <img src="{{ url_for('static', filename='images/feedback_header.jpg') }}" alt="Feedback">
+    <div class="page-header-content">
+        <h1>Your Feedback Matters</h1>
+        <p>Help us serve you better</p>
+    </div>
+</section>
+
+<!-- Feedback Introduction -->
+<section class="feedback-intro">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">We're Listening</span>
+            <h2 class="section-title">Share Your Experience</h2>
+            <p class="section-description">
+                Your satisfaction is our top priority. Whether you had an amazing experience or faced any challenges, 
+                we want to hear from you. Every piece of feedback helps us improve and serve you better.
+            </p>
+        </div>
+        
+        <div class="feedback-stats">
+            <div class="stat-card">
+                <i class="fas fa-star"></i>
+                <h3>4.8/5</h3>
+                <p>Average Rating</p>
+            </div>
+            
+            <div class="stat-card">
+                <i class="fas fa-users"></i>
+                <h3>2,500+</h3>
+                <p>Happy Customers</p>
+            </div>
+            
+            <div class="stat-card">
+                <i class="fas fa-heart"></i>
+                <h3>98%</h3>
+                <p>Would Recommend</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Feedback Form Section -->
+<section class="feedback-section">
+    <div class="container">
+        <div class="feedback-wrapper">
+            <div class="feedback-form-container">
+                <form action="{{ url_for('feedback') }}" method="POST" class="feedback-form" id="feedbackForm">
+                    <h3>Tell Us About Your Experience</h3>
+                    
+                    <div class="form-group">
+                        <label for="name"><i class="fas fa-user"></i> Your Name *</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email"><i class="fas fa-envelope"></i> Email Address *</label>
+                        <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="rating"><i class="fas fa-star"></i> Overall Rating *</label>
+                        <div class="rating-input" id="ratingInput">
+                            <input type="radio" id="star5" name="rating" value="5" required>
+                            <label for="star5" class="star" title="Excellent">
+                                <i class="fas fa-star"></i>
+                            </label>
+                            
+                            <input type="radio" id="star4" name="rating" value="4">
+                            <label for="star4" class="star" title="Very Good">
+                                <i class="fas fa-star"></i>
+                            </label>
+                            
+                            <input type="radio" id="star3" name="rating" value="3">
+                            <label for="star3" class="star" title="Good">
+                                <i class="fas fa-star"></i>
+                            </label>
+                            
+                            <input type="radio" id="star2" name="rating" value="2">
+                            <label for="star2" class="star" title="Fair">
+                                <i class="fas fa-star"></i>
+                            </label>
+                            
+                            <input type="radio" id="star1" name="rating" value="1">
+                            <label for="star1" class="star" title="Poor">
+                                <i class="fas fa-star"></i>
+                            </label>
+                        </div>
+                        <p class="rating-text">Click on stars to rate</p>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="comments"><i class="fas fa-comment-alt"></i> Your Comments *</label>
+                        <textarea id="comments" name="comments" rows="6" 
+                                  placeholder="Please share your thoughts about the food, service, ambience, or anything else..." 
+                                  required></textarea>
+                    </div>
+                    
+                    <div class="form-notice">
+                        <i class="fas fa-shield-alt"></i>
+                        <p>Your feedback is confidential and will be used solely to improve our service. We respect your privacy.</p>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i class="fas fa-paper-plane"></i> Submit Feedback
+                    </button>
+                </form>
+            </div>
+            
+            <div class="feedback-info">
+                <div class="info-card">
+                    <i class="fas fa-comments"></i>
+                    <h3>Why Your Feedback Matters</h3>
+                    <p>
+                        Every comment, suggestion, and critique helps us understand what we're doing right and 
+                        where we can improve. Your voice shapes our menu, service standards, and overall experience.
+                    </p>
+                </div>
+                
+                <div class="info-card">
+                    <i class="fas fa-trophy"></i>
+                    <h3>We Act on Feedback</h3>
+                    <p>
+                        We don't just collect feedback—we act on it. Recent menu additions, service improvements, 
+                        and ambience changes have all come from guest suggestions.
+                    </p>
+                </div>
+                
+                <div class="info-card">
+                    <i class="fas fa-gift"></i>
+                    <h3>Appreciation Program</h3>
+                    <p>
+                        Regular reviewers are entered into our monthly appreciation program for special offers 
+                        and exclusive dining experiences.
+                    </p>
+                </div>
+                
+                <div class="info-card">
+                    <i class="fas fa-headset"></i>
+                    <h3>Need Immediate Assistance?</h3>
+                    <p>
+                        If you experienced an issue during your visit, please call us at 
+                        <strong>+91 98765 43210</strong> so we can address it immediately.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Recent Reviews -->
+<section class="reviews-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">What Others Say</span>
+            <h2 class="section-title">Recent Guest Reviews</h2>
+        </div>
+        
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="review-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="review-text">
+                    "Outstanding in every way! The Butter Chicken was the best I've ever had, and the service 
+                    was impeccable. The ambience is perfect for both intimate dinners and celebrations."
+                </p>
+                <div class="review-author">
+                    <strong>Rajesh Kumar</strong>
+                    <span>November 2024</span>
+                </div>
+            </div>
+            
+            <div class="review-card">
+                <div class="review-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="review-text">
+                    "As a vegan, I'm usually limited in options, but Chill Pill Café went above and beyond. 
+                    The chef created a custom dish for me that was absolutely delicious. True hospitality!"
+                </p>
+                <div class="review-author">
+                    <strong>Neha Patel</strong>
+                    <span>October 2024</span>
+                </div>
+            </div>
+            
+            <div class="review-card">
+                <div class="review-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="review-text">
+                    "We celebrated our anniversary here and it was magical. The staff surprised us with a 
+                    complimentary dessert and the entire experience was perfect. We'll definitely be back!"
+                </p>
+                <div class="review-author">
+                    <strong>Amit & Priya</strong>
+                    <span>November 2024</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Commitment Section -->
+<section class="commitment-section">
+    <div class="container">
+        <div class="commitment-content">
+            <h2>Our Commitment to Excellence</h2>
+            <p>
+                Customer satisfaction isn't just a goal—it's our foundation. Every team member at Chill Pill Café 
+                is trained to prioritize your comfort, preferences, and happiness. We continuously evolve based on 
+                your feedback because we believe the best restaurants are built in partnership with their guests.
+            </p>
+            <div class="commitment-features">
+                <div class="commitment-item">
+                    <i class="fas fa-handshake"></i>
+                    <h4>100% Response Rate</h4>
+                    <p>We read and respond to every piece of feedback</p>
+                </div>
+                
+                <div class="commitment-item">
+                    <i class="fas fa-bolt"></i>
+                    <h4>Quick Action</h4>
+                    <p>Issues are addressed immediately and proactively</p>
+                </div>
+                
+                <div class="commitment-item">
+                    <i class="fas fa-chart-line"></i>
+                    <h4>Continuous Improvement</h4>
+                    <p>Regular menu and service updates based on your input</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// Star rating interaction
+document.addEventListener('DOMContentLoaded', function() {
+    const stars = document.querySelectorAll('.rating-input .star');
+    const ratingText = document.querySelector('.rating-text');
+    
+    const ratingLabels = {
+        1: 'Poor - We need to improve',
+        2: 'Fair - Below expectations',
+        3: 'Good - Satisfactory experience',
+        4: 'Very Good - Above expectations',
+        5: 'Excellent - Outstanding!'
+    };
+    
+    stars.forEach(star => {
+        star.addEventListener('click', function() {
+            const rating = this.getAttribute('title');
+            const value = this.previousElementSibling.value;
+            ratingText.textContent = ratingLabels[value];
+            ratingText.style.fontWeight = 'bold';
+        });
+        
+        star.addEventListener('mouseenter', function() {
+            const value = this.previousElementSibling.value;
+            ratingText.textContent = ratingLabels[value];
+        });
+    });
+    
+    document.querySelector('.rating-input').addEventListener('mouseleave', function() {
+        const checkedStar = document.querySelector('.rating-input input:checked');
+        if (checkedStar) {
+            ratingText.textContent = ratingLabels[checkedStar.value];
+            ratingText.style.fontWeight = 'bold';
+        } else {
+            ratingText.textContent = 'Click on stars to rate';
+            ratingText.style.fontWeight = 'normal';
+        }
+    });
+});
+</script>
+{% endblock %}

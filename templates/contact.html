@@ -1,0 +1,251 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Us - Chill Pill Café | Get in Touch{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header">
+    <div class="page-header-overlay"></div>
+    <img src="{{ url_for('static', filename='images/contact_header.jpg') }}" alt="Contact Us">
+    <div class="page-header-content">
+        <h1>Contact Us</h1>
+        <p>We'd love to hear from you</p>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact-section">
+    <div class="container">
+        <div class="contact-wrapper">
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <h2>Get in Touch</h2>
+                <p class="contact-intro">
+                    Have questions, feedback, or special requests? We're here to help. 
+                    Reach out through any of the channels below, and we'll respond promptly.
+                </p>
+                
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Visit Us</h4>
+                            <p>{{ contact.address }}</p>
+                            <a href="https://maps.google.com/?q=Bandra+West+Mumbai" target="_blank" class="contact-link">
+                                Get Directions <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Call Us</h4>
+                            <p><a href="tel:{{ contact.phone }}">{{ contact.phone }}</a></p>
+                            <p class="contact-note">Available during operating hours</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Email Us</h4>
+                            <p><a href="mailto:{{ contact.email }}">{{ contact.email }}</a></p>
+                            <p class="contact-note">We'll respond within 24 hours</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Opening Hours</h4>
+                            <p><strong>Monday - Thursday:</strong><br>{{ contact.hours.weekdays }}</p>
+                            <p><strong>Friday - Sunday:</strong><br>{{ contact.hours.weekends }}</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-social">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="{{ contact.social.instagram }}" target="_blank" class="social-link instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="{{ contact.social.facebook }}" target="_blank" class="social-link facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="{{ contact.social.twitter }}" target="_blank" class="social-link twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Map -->
+            <div class="contact-map">
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.0234567890123!2d72.8296!3d19.0596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDAzJzM0LjYiTiA3MsKwNDknNDYuNiJF!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin" 
+                        width="100%" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <div class="map-note">
+                    <i class="fas fa-info-circle"></i>
+                    <p>Located in the heart of Bandra West, easily accessible via Bandra Station (Western Line)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Quick Actions -->
+<section class="quick-actions">
+    <div class="container">
+        <h2>How Can We Help You Today?</h2>
+        <div class="actions-grid">
+            <a href="{{ url_for('reservation') }}" class="action-card">
+                <i class="fas fa-calendar-check"></i>
+                <h4>Make a Reservation</h4>
+                <p>Book your table online</p>
+            </a>
+            
+            <a href="{{ url_for('menu') }}" class="action-card">
+                <i class="fas fa-book-open"></i>
+                <h4>View Menu</h4>
+                <p>Explore our offerings</p>
+            </a>
+            
+            <a href="{{ url_for('feedback') }}" class="action-card">
+                <i class="fas fa-comment-dots"></i>
+                <h4>Share Feedback</h4>
+                <p>Tell us about your experience</p>
+            </a>
+            
+            <a href="tel:{{ contact.phone }}" class="action-card">
+                <i class="fas fa-phone-alt"></i>
+                <h4>Call for Inquiries</h4>
+                <p>Speak with our team</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">Common Questions</span>
+            <h2 class="section-title">Frequently Asked Questions</h2>
+        </div>
+        
+        <div class="faq-grid">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <i class="fas fa-parking"></i>
+                    <h4>Is parking available?</h4>
+                </div>
+                <p class="faq-answer">
+                    Yes, we have valet parking available for our guests. Street parking is also available in the vicinity.
+                </p>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <i class="fas fa-wheelchair"></i>
+                    <h4>Is the restaurant wheelchair accessible?</h4>
+                </div>
+                <p class="faq-answer">
+                    Absolutely. We have wheelchair-accessible entrances, seating, and restrooms to ensure comfort for all guests.
+                </p>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <i class="fas fa-users"></i>
+                    <h4>Can you accommodate large groups?</h4>
+                </div>
+                <p class="faq-answer">
+                    Yes! For groups of 10 or more, please contact us directly so we can arrange special seating and customize your experience.
+                </p>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <i class="fas fa-leaf"></i>
+                    <h4>Do you offer vegetarian/vegan options?</h4>
+                </div>
+                <p class="faq-answer">
+                    We have extensive vegetarian options and can customize many dishes for vegan guests. Our menu clearly marks all dietary information.
+                </p>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <i class="fas fa-baby"></i>
+                    <h4>Is Chill Pill Café family-friendly?</h4>
+                </div>
+                <p class="faq-answer">
+                    Yes, families are very welcome! We provide high chairs and have a kids' menu available upon request.
+                </p>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <i class="fas fa-credit-card"></i>
+                    <h4>What payment methods do you accept?</h4>
+                </div>
+                <p class="faq-answer">
+                    We accept cash, all major credit/debit cards, UPI, and digital wallets (Paytm, Google Pay, PhonePe).
+                </p>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <i class="fas fa-wifi"></i>
+                    <h4>Do you have Wi-Fi?</h4>
+                </div>
+                <p class="faq-answer">
+                    Yes, complimentary high-speed Wi-Fi is available for all our guests. Ask your server for the password.
+                </p>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <i class="fas fa-ban-smoking"></i>
+                    <h4>Is smoking allowed?</h4>
+                </div>
+                <p class="faq-answer">
+                    Chill Pill Café is a non-smoking establishment to ensure a pleasant environment for all guests.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Newsletter Signup -->
+<section class="newsletter-section">
+    <div class="container">
+        <div class="newsletter-content">
+            <h2>Stay Updated</h2>
+            <p>Subscribe to receive exclusive offers, new menu updates, and special event invitations</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

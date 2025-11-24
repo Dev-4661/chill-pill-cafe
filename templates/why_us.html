@@ -1,0 +1,285 @@
+{% extends "base.html" %}
+
+{% block title %}Why Choose Us - Chill Pill Café | What Makes Us Special{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header">
+    <div class="page-header-overlay"></div>
+    <img src="{{ url_for('static', filename='images/whyus_header.jpg') }}" alt="Why Choose Us">
+    <div class="page-header-content">
+        <h1>Why We Stand Out</h1>
+        <p>Discover what makes Chill Pill Café truly exceptional</p>
+    </div>
+</section>
+
+<!-- Main Differentiators -->
+<section class="differentiators-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">Our Distinction</span>
+            <h2 class="section-title">What Sets Us Apart</h2>
+            <p class="section-description">
+                In a city filled with dining options, Chill Pill Café stands out through unwavering commitment 
+                to excellence, authenticity, and creating unforgettable experiences
+            </p>
+        </div>
+        
+        <div class="differentiators-grid">
+            <div class="diff-card">
+                <div class="diff-number">01</div>
+                <div class="diff-icon">
+                    <i class="fas fa-hat-chef"></i>
+                </div>
+                <h3>Award-Winning Chefs</h3>
+                <p>
+                    Our culinary team is led by Chef Vikram Malhotra, recipient of multiple prestigious awards 
+                    including the Golden Fork Award 2023. Each chef brings specialized expertise and passion 
+                    to their craft, ensuring every dish meets the highest standards.
+                </p>
+            </div>
+            
+            <div class="diff-card">
+                <div class="diff-number">02</div>
+                <div class="diff-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <h3>Farm-to-Table Freshness</h3>
+                <p>
+                    We partner with local organic farms and premium suppliers to source the freshest ingredients 
+                    daily. Our vegetables arrive every morning, seafood is caught within 24 hours, and herbs are 
+                    grown in our rooftop garden. This commitment to freshness translates to superior flavor.
+                </p>
+            </div>
+            
+            <div class="diff-card">
+                <div class="diff-number">03</div>
+                <div class="diff-icon">
+                    <i class="fas fa-magic"></i>
+                </div>
+                <h3>Signature Culinary Techniques</h3>
+                <p>
+                    We employ traditional cooking methods like tandoor roasting, slow-braising, wood-fire grilling, 
+                    and sous-vide precision cooking. These time-honored techniques, combined with modern innovation, 
+                    create flavors and textures that are simply unmatched.
+                </p>
+            </div>
+            
+            <div class="diff-card">
+                <div class="diff-number">04</div>
+                <div class="diff-icon">
+                    <i class="fas fa-gem"></i>
+                </div>
+                <h3>Premium Ingredients</h3>
+                <p>
+                    We use only the finest ingredients: Italian truffle oil, aged parmesan from Parma, saffron 
+                    from Kashmir, free-range chicken, and line-caught sea bass. We never compromise on quality, 
+                    which is why our dishes taste extraordinary.
+                </p>
+            </div>
+            
+            <div class="diff-card">
+                <div class="diff-number">05</div>
+                <div class="diff-icon">
+                    <i class="fas fa-spa"></i>
+                </div>
+                <h3>Tranquil Ambience</h3>
+                <p>
+                    Our interior design creates a serene escape from Mumbai's hustle. Thoughtful lighting, 
+                    comfortable seating, curated music, and greenery combine to create an atmosphere where 
+                    you can truly relax, converse, and enjoy your meal without distraction.
+                </p>
+            </div>
+            
+            <div class="diff-card">
+                <div class="diff-number">06</div>
+                <div class="diff-icon">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <h3>Personalized Service</h3>
+                <p>
+                    Unlike large chains, we remember our regulars, celebrate birthdays with complimentary desserts, 
+                    and accommodate special dietary needs with care. Our staff is trained to provide attentive yet 
+                    unobtrusive service that makes every guest feel valued.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Brand Identity -->
+<section class="brand-identity">
+    <div class="container">
+        <div class="identity-content">
+            <div class="identity-text">
+                <span class="section-label">Our Brand</span>
+                <h2>The Chill Pill Philosophy</h2>
+                <p>
+                    More than just a name, "Chill Pill" represents our core belief that dining should be therapeutic. 
+                    In today's fast-paced world, we offer a sanctuary where time slows down, stress melts away, and 
+                    every bite brings joy.
+                </p>
+                
+                <div class="identity-features">
+                    <div class="identity-feature">
+                        <i class="fas fa-heart-pulse"></i>
+                        <div>
+                            <h4>Wellness Through Food</h4>
+                            <p>We believe nutritious, delicious food nourishes both body and mind</p>
+                        </div>
+                    </div>
+                    
+                    <div class="identity-feature">
+                        <i class="fas fa-smile-beam"></i>
+                        <div>
+                            <h4>Creating Joy</h4>
+                            <p>Every detail is designed to bring happiness to our guests</p>
+                        </div>
+                    </div>
+                    
+                    <div class="identity-feature">
+                        <i class="fas fa-people-group"></i>
+                        <div>
+                            <h4>Building Community</h4>
+                            <p>We're a gathering place for friends, families, and food lovers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="identity-image">
+                <img src="{{ url_for('static', filename='images/brand_identity.jpg') }}" alt="Brand Identity">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Signature Dishes Showcase -->
+<section class="signature-showcase">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">Exclusive Creations</span>
+            <h2 class="section-title">Dishes You Won't Find Anywhere Else</h2>
+        </div>
+        
+        <div class="showcase-grid">
+            <div class="showcase-card">
+                <img src="{{ url_for('static', filename='images/cheesecake.jpg') }}" alt="Cheesecake">
+                <h3>Cheesecake</h3>
+                <p>
+                    Our most famous creation—a classic New York style cheesecake perfected to creamy perfection. 
+                    This exclusive dish has been featured in Mumbai's top food magazines and is the reason 
+                    many guests visit us.
+                </p>
+            </div>
+            
+            <div class="showcase-card">
+                <img src="{{ url_for('static', filename='images/truffle_pasta.jpg') }}" alt="Truffle Pasta">
+                <h3>Handmade Truffle Pasta</h3>
+                <p>
+                    Made fresh daily in-house, our pasta is crafted using traditional Italian techniques. 
+                    The luxurious truffle oil is imported from Tuscany, creating an authentic Italian 
+                    experience right here in Mumbai.
+                </p>
+            </div>
+            
+            <div class="showcase-card">
+                <img src="{{ url_for('static', filename='images/butter_chicken.jpg') }}" alt="Butter Chicken">
+                <h3>Signature Butter Chicken</h3>
+                <p>
+                    Our version of this classic has been perfected over years. Marinated for 24 hours, 
+                    tandoor-grilled to perfection, and finished in a rich tomato-cream gravy that's 
+                    simmered for hours—this is butter chicken elevated to an art form.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Customer First Approach -->
+<section class="customer-approach">
+    <div class="container">
+        <div class="approach-content">
+            <h2>Customer Satisfaction is Our Top Priority</h2>
+            <p class="approach-intro">
+                Every decision we make—from menu planning to staff training—is guided by one question: 
+                "Will this enhance our guests' experience?" This customer-first philosophy permeates everything we do.
+            </p>
+            
+            <div class="approach-grid">
+                <div class="approach-card">
+                    <i class="fas fa-comments"></i>
+                    <h4>We Listen</h4>
+                    <p>Feedback shapes our menu, service, and ambience. We actively seek and implement suggestions.</p>
+                </div>
+                
+                <div class="approach-card">
+                    <i class="fas fa-utensils"></i>
+                    <h4>Dietary Accommodations</h4>
+                    <p>Vegan, gluten-free, Jain, allergies—we customize dishes to meet your specific needs.</p>
+                </div>
+                
+                <div class="approach-card">
+                    <i class="fas fa-redo"></i>
+                    <h4>No-Questions-Asked Policy</h4>
+                    <p>Not satisfied with a dish? We'll remake it or offer an alternative immediately.</p>
+                </div>
+                
+                <div class="approach-card">
+                    <i class="fas fa-gift"></i>
+                    <h4>Special Occasions</h4>
+                    <p>Celebrating? Tell us! We'll add complimentary touches to make your moment special.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Awards & Recognition -->
+<section class="awards-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">Recognition</span>
+            <h2 class="section-title">Awards & Accolades</h2>
+        </div>
+        
+        <div class="awards-grid">
+            <div class="award-card">
+                <i class="fas fa-trophy"></i>
+                <h4>Golden Fork Award 2023</h4>
+                <p>Best Multi-Cuisine Restaurant - Mumbai</p>
+            </div>
+            
+            <div class="award-card">
+                <i class="fas fa-star"></i>
+                <h4>Times Food Guide</h4>
+                <p>4.8/5 Stars - Highly Recommended</p>
+            </div>
+            
+            <div class="award-card">
+                <i class="fas fa-certificate"></i>
+                <h4>Excellence in Hospitality</h4>
+                <p>Maharashtra Tourism Award 2024</p>
+            </div>
+            
+            <div class="award-card">
+                <i class="fas fa-medal"></i>
+                <h4>Top 10 Cafés in Bandra</h4>
+                <p>Mumbai Mirror Readers' Choice 2023</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Final CTA -->
+<section class="whyus-cta">
+    <div class="container">
+        <h2>Experience the Difference Yourself</h2>
+        <p>Words can only convey so much. Visit Chill Pill Café and discover why we're Mumbai's favorite dining destination.</p>
+        <div class="cta-buttons">
+            <a href="{{ url_for('reservation') }}" class="btn btn-primary btn-large">Reserve Your Table</a>
+            <a href="{{ url_for('menu') }}" class="btn btn-secondary btn-large">View Menu</a>
+        </div>
+    </div>
+</section>
+{% endblock %}
